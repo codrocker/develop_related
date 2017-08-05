@@ -1,0 +1,7 @@
+一、首先需要安装mac上的软件安装工具(相当于ubuntu下的apt-get):
+    1、运行：/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+    2、在~/.bash_profile里添加环境变量：PATH=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin 因为brew被安装到了这个目录下，之所以会直接重置PATH而不是追加/usr/local/bin到PATH的原因是，顺序的不同会影响命令的搜索顺序,这一点要多加注意。
+
+2、需要安装增强版的ctags，而不是mac自带的，安装方式如下：
+    1、brew install ctags 该ctags同样会被安装到/user/local/bin目录下
+
