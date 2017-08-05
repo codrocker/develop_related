@@ -5,3 +5,6 @@
 2、需要安装增强版的ctags，而不是mac自带的，安装方式如下：
     1、brew install ctags 该ctags同样会被安装到/user/local/bin目录下
 
+3、安装nerd_tree目录树的插件有点特殊：http://www.vim.org/scripts/script.php?script_id=1658把插件下载下来，然后把插件拷贝到plugin之后，竟然报错，然后解决方法是，把下载下来的目录里的lib和autoload拷贝到~/.vim目录下就好了。
+
+4、mac上vim刚开始不能够保存上次编辑位置，在.vimrc配置里加入了相关逻辑也不行，原来是.viminfo权限是root，而不是当前用户，所以没有办法记录的原因，sudo chown andy ~/.viminfo 得解。
