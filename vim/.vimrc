@@ -1,6 +1,12 @@
 " 让vim可以接受鼠标响应，点击，拖拽都可以
 set mouse=a
 
+" 跳转时，如果单个，就直接跳，否则就显示列表
+nmap <c-]> g<c-]>
+
+" 防止插入模式下复制黏贴自动缩进变形
+set paste
+
 "一般设置.
 "set nocompatible "VIM而不是VI
 set history=50 "历史记录50条
