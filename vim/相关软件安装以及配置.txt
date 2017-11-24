@@ -10,3 +10,13 @@
 4、mac上vim刚开始不能够保存上次编辑位置，在.vimrc配置里加入了相关逻辑也不行，原来是.viminfo权限是root，而不是当前用户，所以没有办法记录的原因，sudo chown andy ~/.viminfo 得解。
 
 5、注意：我平时喜欢用vi打开文件，所以需要自己在.bash_profile里设置一下，我就是因为把这事忘了，结果虽然安装了高版本的vim，但其实还是用了老版本的，导致一些列的问题，一定要注意。
+
+二、go ctags 不跳转，解决方法：
+    查看ctags是否支持go语言：ctags --list-languages
+    如果不支持：
+    在~/.ctags文件（没有则新建）中添加如下代码:
+    --langdef=Go
+    --langmap=Go:.go
+    --regex-Go=/func([ \t]+[)]+)?[ \t]+([a-zA-Z0-9_]+)/\2/d,func/
+    --regex-Go=/var[ \t]+([a-zA-Z_][a-zA-Z0-9_]+)/\1/d,var/
+    --regex-Go=/type[ \t]+([a-zA-Z_][a-zA-Z0-9_]+)/\1/d,type/
